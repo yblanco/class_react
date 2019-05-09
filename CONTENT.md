@@ -1,4 +1,4 @@
-# Content
+# Index of Content
 
 ## Día 1:
 1. ¿Qué es react?
@@ -24,7 +24,90 @@
 1. Task 5
 1. Mi primera app
 
-# Tasks
+-----
+
+# Content
+
+## ¿Qué es React?
+
+Es una librería de javascript basada en Ecma Scrip de código abierto desarrollada por Facebook enfocada en la creación de interfaces de usuarios, a través del desarrollo de componentes reutilizables. React puede ser empleado no solo en el lado del cliente si no que también puede ser representado en el servidor.
+
+React permite desarrollar todo tipo de aplicaciones web e incluso aplicaciones para móviles. React por si misma es considerada una librería y no un framework de desarrollo, pero sus funcionalidades pueden igualar a cualquier framework de frontend en el mercado debido a la infinidad de módulos, y componentes disponibles en todo su ecosistema.
+
+## ¿Cómo funciona React? 
+
+React permite identificar el estado de los componentes y actualizar el DOM en tiempo real, de forma rápida y sencilla. Cada vez que un estado es modificado, React ejecuta sus disparadores para evaluar los cambios aplicado, identificando a través del DOM virtual los segmentos modificados y representarolos sobre el DOM real reflejando así la actualización de la página.
+
+A pesar de parecer un proceso largo, React tiene un algoritmo optimizado para identificar las modificaciones en el DOM, empleando sub árboles en la estructura del DOM, recorriendo de forma jerárquica para alcanzar los nodos a actualizar de forma más eficiente previendo así el recorrido innecesario a través del DOM.
+
+## Componentes
+
+React se enfoca en componentes. Pero ¿Qué es un componente? en el entorno de ReactJS se puede definir como un elemento visual que es capaz de recibir propiedad externas y posee un estado propio siendo capaz de implementar su propia lógica de renderizado. Los componentes en React pueden ser de diversos tipos, entre ellos están los statefull y stateless.
+
+Los componentes statefull son basado en clases encapsuladas y poseen un estado que permite manipular la actualización del dom. Cada cambio en el estado o en las propiedades recibidas resultan en un renderizado nuevo.
+
+Los componentes stateless, son componentes más simples que los statefull, son simples funciones de javascript que los parámetros recibidos son las propiedades externas, de igual manera cada modificación en estas propiedades resultan en un nuevo renderizado. Los componente stateless no manejan un estado propio.
+
+## Ciclo de vida de React.
+
+Todos los componentes de React tienen un ciclo de vida. La diferencia de los componentes stateless y statefull en este aspecto, es que los stateless no permiten intervenir en las etapas de forma directa aún cuando estos también las implementan.
+
+El ciclo de vida de un componente se puede definir en tres etapas:
+1. Construcción y Montaje
+1. Actualización
+1. Destrucción
+
+Estas etapas poseen a su vez diferentes momentos que pueden repetirse entre ellas.
+
+Existe una excepción para el ciclo de vida conocido como Manejo de errores.
+
+Los métodos son abstractos, permitiendo estos declararlo solo si van a ser modificados. 
+
+### Construcción y montado
+
+Esta fase ocurre solo una vez cuando el componente es montado en la interfaz, esta fase se divide en 4 funciones, las cuales se ejecutan en orden secuencial.
+
+#### constructor(props)
+Este método es propio de las clases de javascript, es ejecutado al instanciar la clase. Permite definir el estado inicial, y configurar las diferentes funciones, variables y propiedades internas que se deseen emplear.
+
+#### componentWillMount()
+Es llamado justo antes que el componente sea montado en el DOM, permite manipular las propiedades y el estado inicial antes de ser renderizado.
+
+#### render()
+Genera la interfaz gráfica, retorna una etiqueta JSX que envuelve el contenido HTML a mostrar en la página. Generar modificaciones de estado desde este método puede causar un ciclo infinito.
+
+#### componentDidMount()
+Se ejecuta una vez el componente fue renderizado y es mostrado por el navegador. Permite interactuar con el componente, el DOM y las otras APIS del navegador.
+
+### Actualización
+Esta fase es ejecutada cada vez que un estado o propiedad es actualizada.
+
+#### componentWillReceiveProps(nextProps)
+Cada vez que un nuevo grupo de propiedades es enviado al componente este método es ejecutado incluso si las propiedades no han cambiado.
+
+#### shouldComponentUpdate(nextProps, nextState)
+Este componente permite manipular la actualización (renderización) del componente como tal, debe retornar un booleando que identifica si se debe ejecutar el método de render.
+
+#### componentWillUpdate(nextProps, nextState)
+Una vez el método anterior retornó true, permite manejar las propiedades y el estado previo a ser renderizado.
+
+#### render()
+Genera la interfaz gráfica, el comportamiento es el mismo que el render() explicado en la fase de montaje.
+
+#### componentDidUpdate(prevProps, prevState)
+Es similar al método componentDidMount.
+
+### Desmontado
+
+#### componentWillUnmount()
+Este método permite limpiar cualquier funcionalidad que pueda quedar persistente cuando ya el componente no exista justo antes de su destrucción. Es importante realizar la limpieza para preveer que algún hilo quede abierto y al terminar su ejecución intente actualizar un componente que no existe generando un error.
+
+### Manejo de errores
+
+Esta fase auxiliar solo es ejecutada si existe algún error al intentar renderizar un componente.
+
+#### componentDidCatch()
+Al detectar un error este método es ejecutado, siendo presentado solo de padre a hijo.
 
 ## Task 1:
 * Instalar nodeJs.
@@ -41,6 +124,15 @@
   * El botón debe activarse solo si el input contiene un string mayor o igual a 3 caracteres.
   * Al dar click en el botón de aceptar el texto del input debe mostrarse en pantalla.
 
+
+
+# TODO
+
+## Usando librerías externas
+## ¿Qué es redux?
+## Estructuras y directorio
+## Componentes vs contenedores
+## Acciones y reducers
 ## Task 3:
 * Instalar [react-contextmenu](https://www.npmjs.com/package/react-contextmenu)
 * Se debe modificar el formulario para que:
@@ -64,8 +156,17 @@
   * En Menú se mostrará el menú contextual.
   * El menú contextual solo debe mostrarse si el texto introducido en el input es "Activar" y se dió click en el botón.
 
+## React Router
+## Implementando un menú.
+
 ## Task 5:
 * Implementar react-redux manteninendo las opciones de menú.
 
-## Task 6:
-* Implementar react-native
+
+## Links
+
+https://desarrolloweb.com/articulos/que-es-react-motivos-uso.html
+
+https://devcode.la/blog/como-funciona-reactjs/
+
+https://medium.com/@alonsus91/tipos-de-componentes-en-reactjs-f387a6f8e2b7
