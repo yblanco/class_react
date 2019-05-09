@@ -8,6 +8,9 @@
 * Implement react-router
 * react-native
 
+## Content
+[Class Content](https://github.com/yblanco/class_react/blob/master/CONTENT.md).	
+
 ---------------------------------------------------
 # Info
 
