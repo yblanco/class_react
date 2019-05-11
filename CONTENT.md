@@ -129,10 +129,49 @@ Al detectar un error este método es ejecutado, siendo presentado solo de padre 
 # TODO
 
 ## Usando librerías externas
+
+React es una librería que cuenta con un extenso ecosistema de aplicaciones que le permiten implementar funcionalidades de forma fácil y sencilla. Estos componentes se encuentra publicados en el registry de npm. (https://www.npmjs.com/)
+
+Las librerías son instaladas a través de npm o yarn, los cuales son gestores de paquetes y estas son importada a para su uso desde el código fuente.
+
 ## ¿Qué es redux?
+
+Es un patrón arquitectónico, que permite manejar el estado de la aplicación manteniendo un flujo de datos sencillo. Al igual que los estados del componente, redux permite almacenar y modificar estados, con la ventaja que este almacenamiento es capaz.
+
+Redux interactúa con los componetes a través de tres elementos:
+
+## Actions
+Permite ejecutar acciones con las que el usuario es capaz de interactuar.
+
+## Reducers
+Permite modificar el estado, recibiendo los datos desde los actions y retornando el nuevo estado.
+
+## Store
+Almacena los datos.
+
+## View
+Es la capa de visualización.
+
 ## Estructuras y directorio
+
+React no restringe el directorio, el desarrollador tiene la libertad de usar la estructura que desee. En el curso emplearemos la siguiente estructura:
+- actions
+- components
+- containers
+- reducers
+
 ## Componentes vs contenedores
-## Acciones y reducers
+
+Para emplear redux, separaremos los componentes en dos tipos, componentes funcionales y representacionales.
+
+### Componentes
+
+Los componentes funcionales se encargan de recibir los datos y procesarlos, así como renderizarlos.
+
+### Contenedores
+
+Los contenedores, emplean los componentes para organizar la vista final y procesar los datos.
+
 ## Task 3:
 * Instalar [react-contextmenu](https://www.npmjs.com/package/react-contextmenu)
 * Se debe modificar el formulario para que:
